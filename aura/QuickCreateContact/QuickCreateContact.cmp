@@ -1,0 +1,11 @@
+<aura:component controller="QuickContactController" implements="force:lightningQuickActionWithoutHeader,flexipage:availableForRecordHome,force:hasRecordId" access="global">
+    <aura:attribute name="recordId" type="Id" />
+    <lightning:card iconName="utility:user" title="Quick Prospect">
+        <div class="slds-text-align--left slds-p-around--medium">
+            <lightning:input aura:id="firstname" name="firstname" label="First Name" required="true" />
+            <lightning:input aura:id="lastname" name="lastname" label="Last Name" required="true" /> 
+            <lightning:input aura:id="email" name="email" label="Email" type="email" messageWhenTypeMismatch="Your entry must be a valid email address." />
+        	<lightning:button class="slds-m-top--small" variant="brand" aura:id="submitBtn" label="Submit" onclick="{!c.handleSaveProspect}" />
+        </div>
+    </lightning:card>
+</aura:component>
